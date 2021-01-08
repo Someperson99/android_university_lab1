@@ -47,6 +47,7 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
         holder.mBookTitle.setText(books.get(position).title);
         holder.mBookAuthor.setText(books.get(position).author);
         holder.mRanking.setText(Integer.toString(books.get(position).rank));
+        holder.mDescription.setText(books.get(position).description);
         Glide.with(holder.mView)
                 .load(books.get(position).bookImageUrl)
                 .centerInside()
@@ -78,6 +79,7 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
         public final TextView mBookAuthor;
         public BestSellerBook mItem;
         public TextView mRanking;
+        public TextView mDescription;
         public ImageView mBookImage;
 
         public BookViewHolder(View view) {
@@ -86,6 +88,7 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
             mBookTitle = (TextView) view.findViewById(R.id.book_title);
             mBookAuthor = (TextView) view.findViewById(R.id.book_author);
             mRanking = (TextView) view.findViewById(R.id.ranking);
+            mDescription = (TextView) view.findViewById(R.id.book_description);
             mBookImage = (ImageView) view.findViewById(R.id.book_image);
         }
 
@@ -95,13 +98,13 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
         }
     }
 
-    @GlideModule
-    public final class MyAppGlideModule extends AppGlideModule {
+//    @GlideModule
+//    public final class MyAppGlideModule extends AppGlideModule {
 //        @Override
 //        public void applyOptions(Context context, GlideBuilder builder) {
 //            builder.setDefaultRequestOptions(new RequestOptions().format(DecodeFormat.PREFER_ARGB_8888));
 //        }
-    }
+//    }
 
 
 }
